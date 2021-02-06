@@ -1,0 +1,26 @@
+
+public class Pattern {
+
+	public static void main(String[] args) {
+		int input=5;
+		int pos=0;
+		patternPrint(input,pos);
+	}
+
+	private static void patternPrint(int input, int pos) {
+		for(int i=input; i>0; i--) {
+			if(pos>0) {
+				int posVal=input;
+				for(int p=0; p<pos; p++ ) {
+					System.out.print(posVal);
+					posVal--;
+				}
+			}
+			for(int j=pos; j<input; j++) {
+				System.out.print(i);
+			}
+			System.out.println();
+			pos++;
+		}
+	}
+}
