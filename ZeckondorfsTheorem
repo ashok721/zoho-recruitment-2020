@@ -1,0 +1,45 @@
+
+public class ZeckondorfsTheorem {
+
+	public static void main(String[] args) {
+		
+		int arr[]= {0,1};
+		int total=0;
+		int input=9;
+		int fibbArr[]=new int[input];
+		
+		for(int i=0; i<input; i++) {
+			total=arr[0]+arr[1];
+			arr[0]=arr[1];
+			arr[1]=total;
+			//System.out.println(total);
+			fibbArr[i]=total;
+		}
+		findFibbCombination(input,fibbArr);
+	}
+
+	private static void findFibbCombination(int input, int fibbArr[]) {
+		
+		int firstNearestVal=0;
+		
+		while(input!=0) {
+			
+			for(int i=0; i<fibbArr.length; i++) {
+				if(input<fibbArr[i]) {
+					if(i==0) {
+						firstNearestVal=fibbArr[i];
+						input=input-fibbArr[i];
+					}
+					else {
+						firstNearestVal=fibbArr[i-1];
+						input=input-fibbArr[i-1];
+					}
+					System.out.println(firstNearestVal);
+					break;
+				}
+				
+			}
+		}
+	
+	}
+}
